@@ -109,7 +109,7 @@ export default function Services() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-numbers text-5xl tracking-tight text-white leading-none mb-1">Services</h1>
-          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Manage your salon's service menu and pricing.</p>
+          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(212,175,55,0.4)' }}>Manage your salon's service menu and pricing.</p>
         </div>
         <button 
           onClick={openAddModal}
@@ -123,12 +123,12 @@ export default function Services() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-1">
         <div className="glass-card p-6">
           <div className="flex items-center">
-            <div className="flex-shrink-0 p-3 rounded-2xl" style={{ background: 'rgba(205, 127, 50,0.08)', border: '1px solid rgba(205, 127, 50,0.15)' }}>
-              <Scissors className="h-6 w-6" style={{ color: '#CD7F32' }} />
+            <div className="flex-shrink-0 p-3 rounded-2xl" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.15)' }}>
+              <Scissors className="h-6 w-6" style={{ color: '#D4AF37' }} />
             </div>
             <div className="ml-5 w-0 flex-1">
               <dl>
-                <dt className="text-xs font-bold tracking-[0.1em] uppercase" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Total Services</dt>
+                <dt className="text-xs font-bold tracking-[0.1em] uppercase" style={{ color: 'rgba(212,175,55,0.5)' }}>Total Services</dt>
                 <dd className="font-numbers text-5xl font-light text-white mt-2">{services.length}</dd>
               </dl>
             </div>
@@ -164,7 +164,7 @@ export default function Services() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left text-white">
-              <thead className="text-xs uppercase font-bold tracking-wider" style={{ background: 'rgba(205, 127, 50,0.04)', borderBottom: '1px solid rgba(205, 127, 50,0.12)', color: 'rgba(205, 127, 50,0.6)' }}>
+              <thead className="text-xs uppercase font-bold tracking-wider" style={{ background: 'rgba(212,175,55,0.04)', borderBottom: '1px solid rgba(212,175,55,0.12)', color: 'rgba(212,175,55,0.6)' }}>
                 <tr>
                   <th className="px-6 py-5">Service Name</th>
                   <th className="px-6 py-5">Price</th>
@@ -183,7 +183,7 @@ export default function Services() {
                 {Object.entries(groupedServices).map(([category, items]) => (
                   <React.Fragment key={category}>
                     <tr className="bg-black/40 border-y border-white/10">
-                      <td colSpan={3} className="px-6 py-3 text-xs font-bold tracking-widest uppercase" style={{ color: '#CD7F32' }}>
+                      <td colSpan={3} className="px-6 py-3 text-xs font-bold tracking-widest uppercase" style={{ color: '#D4AF37' }}>
                         {category}
                       </td>
                     </tr>
@@ -264,4 +264,3 @@ export default function Services() {
     </div>
   );
 }
-

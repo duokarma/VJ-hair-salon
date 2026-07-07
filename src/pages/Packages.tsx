@@ -131,7 +131,7 @@ export default function Packages() {
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 glass-panel p-6 sm:p-8 animate-in slide-in-from-bottom-4 duration-500">
         <div>
           <h1 className="font-numbers text-5xl tracking-tight text-white leading-none mb-1">Packages</h1>
-          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Manage bundled services</p>
+          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(212,175,55,0.4)' }}>Manage bundled services</p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <div className="relative">
@@ -157,8 +157,8 @@ export default function Packages() {
         </div>
       ) : filteredPackages.length === 0 ? (
         <div className="glass-panel p-12 text-center flex flex-col items-center">
-          <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(205, 127, 50,0.1)', border: '1px solid rgba(205, 127, 50,0.2)' }}>
-            <Tag className="w-8 h-8" style={{ color: '#CD7F32' }} />
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.2)' }}>
+            <Tag className="w-8 h-8" style={{ color: '#D4AF37' }} />
           </div>
           <h3 className="text-xl font-light text-white mb-2">No Packages Found</h3>
           <p className="text-white/60">Click "Add Package" to create a new service bundle.</p>
@@ -166,8 +166,8 @@ export default function Packages() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPackages.map((pkg) => (
-            <div key={pkg.id} className="glass-panel p-6 flex flex-col group relative overflow-hidden transition-all hover:shadow-md" style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(17,17,17,0.6)' }}>
-              <div className="absolute top-0 left-0 w-1 h-full transition-colors bg-[#CD7F32]/40 group-hover:bg-[#CD7F32]"></div>
+            <div key={pkg.id} className="glass-panel p-6 flex flex-col group relative overflow-hidden transition-all hover:shadow-md" style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(17,17,17,0.6)' }}>
+              <div className="absolute top-0 left-0 w-1 h-full transition-colors bg-[#D4AF37]/40 group-hover:bg-[#D4AF37]"></div>
               
               <div className="flex justify-between items-start mb-4">
                 <div>
@@ -185,7 +185,7 @@ export default function Packages() {
               </div>
 
               <div className="flex-1 mt-2 mb-4">
-                <span className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Included Services</span>
+                <span className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(212,175,55,0.5)' }}>Included Services</span>
                 <div className="flex flex-wrap gap-2">
                   {pkg.package_services?.map((ps: any, idx: number) => {
                     const s = availableServices.find(as => as.id.toString() === ps.service_id.toString());
@@ -199,8 +199,8 @@ export default function Packages() {
               </div>
 
               <div className="mt-auto pt-4 border-t border-white/10 flex justify-between items-center">
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Price</span>
-                <span className="font-numbers text-3xl font-light" style={{ color: '#CD7F32' }}>Rs. {pkg.price}</span>
+                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'rgba(212,175,55,0.5)' }}>Price</span>
+                <span className="font-numbers text-3xl font-light" style={{ color: '#D4AF37' }}>Rs. {pkg.price}</span>
               </div>
             </div>
           ))}
@@ -240,7 +240,7 @@ export default function Packages() {
                 <div>
                   <label className="block text-xs font-bold tracking-widest text-white/60 uppercase mb-2 flex items-center justify-between">
                     <span>Included Services</span>
-                    <button type="button" onClick={() => setSelectedServices([...selectedServices, {service_id: ''}])} className="text-xs font-bold transition-colors hover:opacity-80" style={{ color: '#CD7F32' }}>
+                    <button type="button" onClick={() => setSelectedServices([...selectedServices, {service_id: ''}])} className="text-xs font-bold transition-colors hover:opacity-80" style={{ color: '#D4AF37' }}>
                       + Add Service
                     </button>
                   </label>
@@ -282,4 +282,3 @@ export default function Packages() {
     </div>
   );
 }
-

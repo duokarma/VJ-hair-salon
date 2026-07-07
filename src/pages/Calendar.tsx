@@ -86,7 +86,7 @@ export default function CalendarView() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 className="text-4xl tracking-tight text-white" style={{ fontFamily: "'Cinzel', serif", fontWeight: 400 }}>Calendar</h2>
-          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(205, 127, 50,0.4)' }}>View visits and appointments.</p>
+          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(212,175,55,0.4)' }}>View visits and appointments.</p>
         </div>
 
         {/* Filter Toggle */}
@@ -96,7 +96,7 @@ export default function CalendarView() {
               key={val}
               onClick={() => setFilter(val)}
               className="px-4 py-2 text-xs font-bold rounded-lg transition-all duration-200"
-              style={filter === val ? { background: val === 'appointments' ? 'rgba(96,165,250,0.15)' : 'rgba(205, 127, 50,0.12)', color: val === 'appointments' ? '#60a5fa' : '#CD7F32', border: `1px solid ${val === 'appointments' ? 'rgba(96,165,250,0.3)' : 'rgba(205, 127, 50,0.25)'}` } : { color: 'rgba(255,255,255,0.4)', border: '1px solid transparent' }}
+              style={filter === val ? { background: val === 'appointments' ? 'rgba(96,165,250,0.15)' : 'rgba(212,175,55,0.12)', color: val === 'appointments' ? '#60a5fa' : '#D4AF37', border: `1px solid ${val === 'appointments' ? 'rgba(96,165,250,0.3)' : 'rgba(212,175,55,0.25)'}` } : { color: 'rgba(255,255,255,0.4)', border: '1px solid transparent' }}
             >
               {label}
             </button>
@@ -106,22 +106,22 @@ export default function CalendarView() {
 
       <div className="grid lg:grid-cols-3 gap-6 h-[calc(100vh-160px)] min-h-[600px]">
         {/* Calendar Grid */}
-        <div className="lg:col-span-2 glass-card p-6 flex flex-col" style={{ border: '1px solid rgba(205, 127, 50,0.1)' }}>
+        <div className="lg:col-span-2 glass-card p-6 flex flex-col" style={{ border: '1px solid rgba(212,175,55,0.1)' }}>
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-2xl font-light tracking-tight text-white" style={{ fontFamily: "'Cinzel', serif" }}>{format(currentDate, 'MMMM yyyy')}</h3>
             <div className="flex gap-2">
-              <button onClick={prevMonth} className="p-2 rounded-full text-white/50 hover:text-[#CD7F32] border border-transparent hover:border-[rgba(205, 127, 50,0.2)] transition-all"><ChevronLeft className="w-5 h-5" /></button>
-              <button onClick={nextMonth} className="p-2 rounded-full text-white/50 hover:text-[#CD7F32] border border-transparent hover:border-[rgba(205, 127, 50,0.2)] transition-all"><ChevronRight className="w-5 h-5" /></button>
+              <button onClick={prevMonth} className="p-2 rounded-full text-white/50 hover:text-[#D4AF37] border border-transparent hover:border-[rgba(212,175,55,0.2)] transition-all"><ChevronLeft className="w-5 h-5" /></button>
+              <button onClick={nextMonth} className="p-2 rounded-full text-white/50 hover:text-[#D4AF37] border border-transparent hover:border-[rgba(212,175,55,0.2)] transition-all"><ChevronRight className="w-5 h-5" /></button>
             </div>
           </div>
 
           {/* Legend */}
           <div className="flex gap-4 mb-4 text-xs font-bold tracking-wider">
-            {(filter === 'all' || filter === 'visits') && <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ background: '#CD7F32' }} />Visits</span>}
+            {(filter === 'all' || filter === 'visits') && <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full" style={{ background: '#D4AF37' }} />Visits</span>}
             {(filter === 'all' || filter === 'appointments') && <span className="flex items-center gap-1.5" style={{ color: '#60a5fa' }}><span className="w-2.5 h-2.5 rounded-full bg-blue-400" />Appointments</span>}
           </div>
 
-          <div className="grid grid-cols-7 gap-2 text-center text-sm font-bold tracking-widest uppercase mb-4" style={{ color: 'rgba(205, 127, 50,0.35)' }}>
+          <div className="grid grid-cols-7 gap-2 text-center text-sm font-bold tracking-widest uppercase mb-4" style={{ color: 'rgba(212,175,55,0.35)' }}>
             <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
           </div>
 
@@ -140,15 +140,15 @@ export default function CalendarView() {
                   key={i}
                   onClick={() => setSelectedDate(day)}
                   className="rounded-xl border p-2 flex flex-col cursor-pointer transition-all duration-300"
-                  style={isSelected ? { background: 'rgba(205, 127, 50,0.1)', borderColor: 'rgba(205, 127, 50,0.4)', boxShadow: '0 0 20px rgba(205, 127, 50,0.1)', transform: 'scale(1.05)' } : { background: 'rgba(17,17,17,0.6)', borderColor: 'rgba(205, 127, 50,0.06)' }}
-                  onMouseEnter={e => { if (!isSelected) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(205, 127, 50,0.2)'; (e.currentTarget as HTMLElement).style.background = 'rgba(205, 127, 50,0.04)'; } }}
-                  onMouseLeave={e => { if (!isSelected) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(205, 127, 50,0.06)'; (e.currentTarget as HTMLElement).style.background = 'rgba(17,17,17,0.6)'; } }}
+                  style={isSelected ? { background: 'rgba(212,175,55,0.1)', borderColor: 'rgba(212,175,55,0.4)', boxShadow: '0 0 20px rgba(212,175,55,0.1)', transform: 'scale(1.05)' } : { background: 'rgba(17,17,17,0.6)', borderColor: 'rgba(212,175,55,0.06)' }}
+                  onMouseEnter={e => { if (!isSelected) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.2)'; (e.currentTarget as HTMLElement).style.background = 'rgba(212,175,55,0.04)'; } }}
+                  onMouseLeave={e => { if (!isSelected) { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.06)'; (e.currentTarget as HTMLElement).style.background = 'rgba(17,17,17,0.6)'; } }}
                 >
-                  <span className={`text-sm font-bold mb-1 ${isSelected ? 'text-[#CD7F32]' : 'text-white/70'}`}>{format(day, 'd')}</span>
+                  <span className={`text-sm font-bold mb-1 ${isSelected ? 'text-[#D4AF37]' : 'text-white/70'}`}>{format(day, 'd')}</span>
                   <div className="mt-auto space-y-1">
                     {dayVisits.length > 0 && (
                       <div className="text-xs">
-                        <div className="font-semibold flex items-center" style={{ color: isSelected ? '#E5C158' : '#CD7F32' }}>₹{dayRevenue.toLocaleString()}</div>
+                        <div className="font-semibold flex items-center" style={{ color: isSelected ? '#E5C158' : '#D4AF37' }}>₹{dayRevenue.toLocaleString()}</div>
                         <div className={`flex items-center ${isSelected ? 'text-white/90' : 'text-white/50'}`}><Users className="w-3 h-3 mr-0.5" />{dayVisits.length}</div>
                       </div>
                     )}
@@ -165,16 +165,16 @@ export default function CalendarView() {
         </div>
 
         {/* Right Panel */}
-        <div className="glass-card p-6 flex flex-col h-full overflow-hidden" style={{ border: '1px solid rgba(205, 127, 50,0.1)' }}>
-          <h3 className="text-xl font-light tracking-wide text-white mb-4 pb-4 shrink-0" style={{ borderBottom: '1px solid rgba(205, 127, 50,0.1)', fontFamily: "'Cinzel', serif" }}>
+        <div className="glass-card p-6 flex flex-col h-full overflow-hidden" style={{ border: '1px solid rgba(212,175,55,0.1)' }}>
+          <h3 className="text-xl font-light tracking-wide text-white mb-4 pb-4 shrink-0" style={{ borderBottom: '1px solid rgba(212,175,55,0.1)', fontFamily: "'Cinzel', serif" }}>
             {format(selectedDate, 'dd MMMM yyyy')}
           </h3>
 
           <div className="grid grid-cols-2 gap-3 mb-4 shrink-0">
             {(filter === 'all' || filter === 'visits') && (
-              <div className="p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(205, 127, 50,0.1)' }}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Revenue</p>
-                <p className="text-2xl font-light flex items-center" style={{ color: '#CD7F32' }}><IndianRupee className="w-4 h-4 mr-0.5" />{totalRevenue.toLocaleString()}</p>
+              <div className="p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(212,175,55,0.1)' }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(212,175,55,0.4)' }}>Revenue</p>
+                <p className="text-2xl font-light flex items-center" style={{ color: '#D4AF37' }}><IndianRupee className="w-4 h-4 mr-0.5" />{totalRevenue.toLocaleString()}</p>
               </div>
             )}
             {(filter === 'all' || filter === 'appointments') && (
@@ -218,7 +218,7 @@ export default function CalendarView() {
             {(filter === 'all' || filter === 'visits') && (
               <div>
                 {(filter === 'all' && selectedDateAppts.length > 0) && (
-                  <p className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-1" style={{ color: 'rgba(205, 127, 50,0.5)' }}><Users className="w-3 h-3" /> Completed Visits</p>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-1" style={{ color: 'rgba(212,175,55,0.5)' }}><Users className="w-3 h-3" /> Completed Visits</p>
                 )}
                 {selectedDateVisits.length === 0 ? (
                   filter === 'visits' && (
@@ -230,12 +230,12 @@ export default function CalendarView() {
                 ) : (
                   <div className="space-y-3">
                     {selectedDateVisits.map((v, i) => (
-                      <div key={v.id || i} className="rounded-2xl p-5 transition-all" style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(205, 127, 50,0.08)' }}
-                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(205, 127, 50,0.2)'; }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(205, 127, 50,0.08)'; }}>
+                      <div key={v.id || i} className="rounded-2xl p-5 transition-all" style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(212,175,55,0.08)' }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.2)'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,175,55,0.08)'; }}>
                         <div className="flex justify-between items-start mb-3">
                           <h4 className="font-medium text-white">{i + 1}. {v.customer?.name || 'Walk-in'}</h4>
-                          <span className="font-bold" style={{ color: '#CD7F32' }}>₹{(v.grand_total || 0).toLocaleString()}</span>
+                          <span className="font-bold" style={{ color: '#D4AF37' }}>₹{(v.grand_total || 0).toLocaleString()}</span>
                         </div>
                         <div className="text-sm text-white/60 space-y-1.5">
                           {v.visit_services?.map((svc: any, idx: number) => (
@@ -250,8 +250,8 @@ export default function CalendarView() {
                               <span>₹{prod.price}</span>
                             </div>
                           ))}
-                          <div className="pt-2 flex justify-between text-xs" style={{ borderTop: '1px solid rgba(205, 127, 50,0.08)' }}>
-                            <span className="uppercase tracking-wider font-bold" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Served by</span>
+                          <div className="pt-2 flex justify-between text-xs" style={{ borderTop: '1px solid rgba(212,175,55,0.08)' }}>
+                            <span className="uppercase tracking-wider font-bold" style={{ color: 'rgba(212,175,55,0.4)' }}>Served by</span>
                             <span className="text-white font-medium">{v.staff?.name || 'Unknown'}</span>
                           </div>
                         </div>
@@ -275,4 +275,3 @@ export default function CalendarView() {
     </div>
   );
 }
-

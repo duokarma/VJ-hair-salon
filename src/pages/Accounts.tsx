@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip, L
 import { format, startOfMonth, endOfMonth, parseISO } from 'date-fns';
 import toast from 'react-hot-toast';
 
-const COLORS = ['#F4E3C5', '#CD7F32', '#996515', '#C5B358', '#E6C200', '#FFDF00'];
+const COLORS = ['#F4E3C5', '#D4AF37', '#996515', '#C5B358', '#E6C200', '#FFDF00'];
 
 export default function Accounts() {
   const [startDate, setStartDate] = useState(format(startOfMonth(new Date()), 'yyyy-MM-dd'));
@@ -301,7 +301,7 @@ export default function Accounts() {
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
           <div
             className="relative w-full max-w-md h-full glass-panel flex flex-col overflow-hidden shadow-2xl"
-            style={{ borderLeft: '1px solid rgba(205, 127, 50,0.15)' }}
+            style={{ borderLeft: '1px solid rgba(212,175,55,0.15)' }}
             onClick={e => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-6 border-b border-white/10 bg-black/40 shrink-0">
@@ -323,14 +323,14 @@ export default function Accounts() {
                     {drawerVisitRows.map((v, i) => (
                       <div key={i} className="flex justify-between items-center py-2 border-b border-white/5">
                         <span className="text-sm text-white/80">{v.customer?.name || 'Walk-in'}</span>
-                        <span className="text-sm font-bold" style={{ color: '#CD7F32' }}>+₹{Number(v.grand_total || 0).toLocaleString()}</span>
+                        <span className="text-sm font-bold" style={{ color: '#D4AF37' }}>+₹{Number(v.grand_total || 0).toLocaleString()}</span>
                       </div>
                     ))}
                     {visits.length > 20 && <p className="text-xs text-white/30 italic text-center">...and {visits.length - 20} more visits</p>}
                   </div>
                   <div className="pt-4 border-t border-white/10 flex justify-between items-center">
                     <span className="text-xs font-bold tracking-widest text-white/50 uppercase">Total Revenue</span>
-                    <span className="text-2xl font-light" style={{ color: '#CD7F32' }}>₹{totalRevenue.toLocaleString()}</span>
+                    <span className="text-2xl font-light" style={{ color: '#D4AF37' }}>₹{totalRevenue.toLocaleString()}</span>
                   </div>
                 </>
               )}
@@ -358,14 +358,14 @@ export default function Accounts() {
                     {products.filter(p => (p.purchased_quantity || 0) > 0).map((p, i) => (
                       <div key={i} className="flex justify-between items-center py-3 border-b border-white/5">
                         <span className="text-sm text-white/90 font-medium">{p.name || 'Unknown Product'}</span>
-                        <span className="font-numbers text-sm font-bold ml-4" style={{ color: '#CD7F32' }}>₹{((p.purchased_quantity || 0) * (p.purchase_price || 0)).toLocaleString()}</span>
+                        <span className="font-numbers text-sm font-bold ml-4" style={{ color: '#D4AF37' }}>₹{((p.purchased_quantity || 0) * (p.purchase_price || 0)).toLocaleString()}</span>
                       </div>
                     ))}
                   </div>
                   <div className="pt-6 mt-4 border-t border-white/10">
                     <div className="flex justify-between items-center">
                       <span className="text-xs font-bold tracking-widest text-white/50 uppercase">Total Inventory Value</span>
-                      <span className="font-numbers text-3xl font-light" style={{ color: '#CD7F32' }}>₹{totalInventoryPurchasedCost.toLocaleString()}</span>
+                      <span className="font-numbers text-3xl font-light" style={{ color: '#D4AF37' }}>₹{totalInventoryPurchasedCost.toLocaleString()}</span>
                     </div>
                   </div>
                 </>
@@ -382,11 +382,11 @@ export default function Accounts() {
                       <span className="text-sm text-white/70">Operating Expenses</span>
                       <span className="font-bold text-danger">− ₹{totalExpenses.toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between items-center p-4 rounded-xl" style={{ background: 'rgba(205, 127, 50,0.05)', border: '1px solid rgba(205, 127, 50,0.12)' }}>
+                    <div className="flex justify-between items-center p-4 rounded-xl" style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.12)' }}>
                       <span className="text-sm text-white/70">Inventory Purchased</span>
-                      <span className="font-bold" style={{ color: '#CD7F32' }}>− ₹{totalInventoryPurchasedCost.toLocaleString()}</span>
+                      <span className="font-bold" style={{ color: '#D4AF37' }}>− ₹{totalInventoryPurchasedCost.toLocaleString()}</span>
                     </div>
-                    <div className="h-px" style={{ background: 'rgba(205, 127, 50,0.2)' }} />
+                    <div className="h-px" style={{ background: 'rgba(212,175,55,0.2)' }} />
                     <div className="flex justify-between items-center p-4 rounded-xl" style={{ background: netProfit >= 0 ? 'rgba(52,211,153,0.08)' : 'rgba(207,102,121,0.08)', border: `1px solid ${netProfit >= 0 ? 'rgba(52,211,153,0.2)' : 'rgba(207,102,121,0.2)'}` }}>
                       <span className="text-sm font-bold text-white">Net Profit</span>
                       <span className={`text-2xl font-light ${netProfit >= 0 ? 'text-emerald-400' : 'text-danger'}`}>= ₹{netProfit.toLocaleString()}</span>
@@ -402,7 +402,7 @@ export default function Accounts() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="font-numbers text-5xl tracking-tight text-white leading-none mb-1">Accounts Overview</h1>
-          <p className="font-light mt-1 tracking-wide" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Financial summary, P&L, and expense tracking.</p>
+          <p className="font-light mt-1 tracking-wide" style={{ color: 'rgba(212,175,55,0.4)' }}>Financial summary, P&L, and expense tracking.</p>
         </div>
         <div className="flex flex-wrap gap-3 items-center">
           <div className="flex items-center gap-2 bg-black/40 px-3 py-2 border border-white/10 shadow-sm rounded-lg">
@@ -442,14 +442,14 @@ export default function Accounts() {
             <div 
               onClick={() => setDrawerType('revenue')}
               className="glass-card p-6 flex flex-col justify-center cursor-pointer hover:bg-black/40 transition-colors" 
-              style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(17,17,17,0.6)' }}
+              style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(17,17,17,0.6)' }}
             >
               <div className="flex justify-between items-start">
-                <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Total Revenue</h3>
+                <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(212,175,55,0.5)' }}>Total Revenue</h3>
                 <div className="bg-success/10 p-2 rounded-lg border border-success/20"><ArrowUpRight className="h-5 w-5 text-success" /></div>
               </div>
               <div className="mt-4 flex items-center gap-2">
-                <span className="font-numbers text-5xl font-light tracking-tight flex items-center mt-2" style={{ color: '#CD7F32' }}><IndianRupee className="w-6 h-6 mr-1" style={{ color: 'rgba(205, 127, 50,0.4)' }} />{totalRevenue.toLocaleString()}</span>
+                <span className="font-numbers text-5xl font-light tracking-tight flex items-center mt-2" style={{ color: '#D4AF37' }}><IndianRupee className="w-6 h-6 mr-1" style={{ color: 'rgba(212,175,55,0.4)' }} />{totalRevenue.toLocaleString()}</span>
               </div>
             </div>
             
@@ -468,19 +468,19 @@ export default function Accounts() {
 
             <div 
               onClick={() => setDrawerType('inventory')}
-              className="glass-card p-6 flex flex-col justify-center relative overflow-hidden cursor-pointer hover:bg-[rgba(205, 127, 50,0.1)] transition-colors" 
-              style={{ border: '1px solid rgba(205, 127, 50,0.2)', background: 'rgba(205, 127, 50,0.05)' }}
+              className="glass-card p-6 flex flex-col justify-center relative overflow-hidden cursor-pointer hover:bg-[rgba(212,175,55,0.1)] transition-colors" 
+              style={{ border: '1px solid rgba(212,175,55,0.2)', background: 'rgba(212,175,55,0.05)' }}
             >
               <div className="absolute top-0 right-0 p-4 opacity-[0.03]">
-                 <Package className="w-24 h-24" style={{ color: '#CD7F32' }} />
+                 <Package className="w-24 h-24" style={{ color: '#D4AF37' }} />
               </div>
               <div className="relative z-10">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: '#CD7F32' }}>Inventory Purchased</h3>
-                  <div className="p-2 rounded-lg" style={{ background: 'rgba(205, 127, 50,0.1)', border: '1px solid rgba(205, 127, 50,0.2)' }}><Package className="h-5 w-5" style={{ color: '#CD7F32' }} /></div>
+                  <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: '#D4AF37' }}>Inventory Purchased</h3>
+                  <div className="p-2 rounded-lg" style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.2)' }}><Package className="h-5 w-5" style={{ color: '#D4AF37' }} /></div>
                 </div>
                 <div className="mt-4 flex items-center gap-2">
-                  <span className="font-numbers text-5xl font-light flex items-center tracking-tight mt-2" style={{ color: '#CD7F32' }}><IndianRupee className="w-6 h-6 mr-1" style={{ color: 'rgba(205, 127, 50,0.4)' }} />{totalInventoryPurchasedCost.toLocaleString()}</span>
+                  <span className="font-numbers text-5xl font-light flex items-center tracking-tight mt-2" style={{ color: '#D4AF37' }}><IndianRupee className="w-6 h-6 mr-1" style={{ color: 'rgba(212,175,55,0.4)' }} />{totalInventoryPurchasedCost.toLocaleString()}</span>
                 </div>
                 <p className="text-xs font-light mt-2 text-primary/70">Lifetime product cost</p>
               </div>
@@ -489,14 +489,14 @@ export default function Accounts() {
             <div 
               onClick={() => setDrawerType('profit')}
               className="glass-card p-6 relative overflow-hidden flex flex-col justify-center group cursor-pointer hover:bg-black/40 transition-colors" 
-              style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(17,17,17,0.6)' }}
+              style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(17,17,17,0.6)' }}
             >
               <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:scale-110 transition-transform duration-500">
-                 <IndianRupee className="w-24 h-24" style={{ color: '#CD7F32' }} />
+                 <IndianRupee className="w-24 h-24" style={{ color: '#D4AF37' }} />
               </div>
               <div className="relative z-10">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Net Profit</h3>
+                  <h3 className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgba(212,175,55,0.5)' }}>Net Profit</h3>
                 </div>
                 <div className="mt-4 flex items-center gap-2">
                   <span className={`font-numbers text-5xl font-light tracking-tight flex items-center mt-2 ${netProfit >= 0 ? 'text-success' : 'text-danger'}`}>
@@ -513,7 +513,7 @@ export default function Accounts() {
           <div className="grid lg:grid-cols-2 gap-6">
             
             {/* Pie Chart */}
-            <div className="glass-card p-6" style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(17,17,17,0.6)' }}>
+            <div className="glass-card p-6" style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(17,17,17,0.6)' }}>
               <h3 className="text-xl font-light text-white mb-6 tracking-tight" style={{ fontFamily: "'Cinzel', serif" }}>Expense Breakdown</h3>
               {expenseData.length === 0 ? (
                 <div className="h-[300px] flex items-center justify-center text-white/60 text-sm italic font-light">
@@ -549,7 +549,7 @@ export default function Accounts() {
             </div>
 
             {/* Recent Transactions List */}
-            <div className="glass-card p-6 flex flex-col h-full max-h-[420px]" style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(17,17,17,0.6)' }}>
+            <div className="glass-card p-6 flex flex-col h-full max-h-[420px]" style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(17,17,17,0.6)' }}>
               <div className="flex justify-between items-center mb-6 shrink-0">
                 <h3 className="text-xl font-light text-white tracking-tight" style={{ fontFamily: "'Cinzel', serif" }}>Recent Transactions</h3>
                 <span className="text-xs font-bold px-3 py-1.5 bg-black/40 text-white border border-white/10 rounded-lg shadow-sm">Period</span>
@@ -589,6 +589,5 @@ export default function Accounts() {
     </div>
   );
 }
-
 
 

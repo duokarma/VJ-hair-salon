@@ -150,7 +150,7 @@ export default function Staff() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="font-numbers text-5xl tracking-tight text-white leading-none mb-1">Staff Management</h1>
-          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(205, 127, 50,0.4)' }}>Manage team payroll, commissions, and performance.</p>
+          <p className="mt-2 font-light tracking-wide" style={{ color: 'rgba(212,175,55,0.4)' }}>Manage team payroll, commissions, and performance.</p>
         </div>
         <button 
           onClick={() => {
@@ -181,8 +181,8 @@ export default function Staff() {
             return (
               <div 
                 key={staff.id} 
-                className="glass-card hover:bg-[rgba(205, 127, 50,0.04)] transition-all cursor-pointer group flex flex-col overflow-hidden relative"
-                style={{ border: '1px solid rgba(205, 127, 50,0.1)', background: 'rgba(20,20,20,0.8)' }}
+                className="glass-card hover:bg-[rgba(212,175,55,0.04)] transition-all cursor-pointer group flex flex-col overflow-hidden relative"
+                style={{ border: '1px solid rgba(212,175,55,0.1)', background: 'rgba(20,20,20,0.8)' }}
                 onClick={() => setSelectedStaffId(staff.id)}
               >
                 <button 
@@ -198,14 +198,14 @@ export default function Staff() {
 
                 <div className="p-6 border-b border-white/10">
                   <div className="flex items-center gap-4 mb-4 pr-8">
-                    <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors" style={{ background: 'rgba(205, 127, 50,0.08)', border: '1px solid rgba(205, 127, 50,0.25)' }}>
-                      <span className="font-bold text-lg transition-colors" style={{ color: '#CD7F32' }}>{initials}</span>
+                    <div className="w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}>
+                      <span className="font-bold text-lg transition-colors" style={{ color: '#D4AF37' }}>{initials}</span>
                     </div>
                     <div className="flex-1 min-w-0 pr-2">
                       <h3 className="font-numbers text-2xl font-light text-white tracking-wide truncate">{staffName}</h3>
                       <p className="text-sm font-light text-white/60">{staff.gender}</p>
                     </div>
-                    <div className="px-3 py-1 rounded-full text-xs font-bold shrink-0" style={staff.status === 'Active' ? { background: 'rgba(205, 127, 50,0.08)', color: '#CD7F32', border: '1px solid rgba(205, 127, 50,0.2)' } : { background: 'rgba(207,102,121,0.08)', color: '#CF6679', border: '1px solid rgba(207,102,121,0.2)' }}>
+                    <div className="px-3 py-1 rounded-full text-xs font-bold shrink-0" style={staff.status === 'Active' ? { background: 'rgba(212,175,55,0.08)', color: '#D4AF37', border: '1px solid rgba(212,175,55,0.2)' } : { background: 'rgba(207,102,121,0.08)', color: '#CF6679', border: '1px solid rgba(207,102,121,0.2)' }}>
                       {staff.status || 'Active'}
                     </div>
                   </div>
@@ -214,7 +214,7 @@ export default function Staff() {
                 <div className="p-6 flex-1 flex flex-col justify-between bg-black/5" onClick={e => e.stopPropagation()}>
                   <div className="space-y-4 mb-4">
                     <div className="flex flex-col">
-                      <label className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Monthly Salary</label>
+                      <label className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'rgba(212,175,55,0.5)' }}>Monthly Salary</label>
                       <div className="relative flex items-center">
                         <IndianRupee className="w-4 h-4 text-white/60 absolute left-4" />
                         <input 
@@ -229,13 +229,13 @@ export default function Staff() {
 
                   <div>
                     <div className="flex justify-between items-center mb-4">
-                      <span className="text-sm font-bold tracking-widest uppercase" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Total Payable</span>
-                      <span className="font-numbers text-3xl font-light tracking-tight" style={{ color: '#CD7F32' }}>Rs. {totalPayable.toLocaleString()}</span>
+                      <span className="text-sm font-bold tracking-widest uppercase" style={{ color: 'rgba(212,175,55,0.5)' }}>Total Payable</span>
+                      <span className="font-numbers text-3xl font-light tracking-tight" style={{ color: '#D4AF37' }}>Rs. {totalPayable.toLocaleString()}</span>
                     </div>
                     <button 
                       onClick={(e) => handlePaySalary(e, staff.id, totalPayable, staffName)}
                       className="w-full py-3 rounded-xl font-bold text-sm transition-all flex items-center justify-center"
-                      style={{ background: 'linear-gradient(135deg, #CD7F32, #E5C158)', color: '#0A0A0A', boxShadow: '0 4px 16px rgba(205, 127, 50,0.2)' }}
+                      style={{ background: 'linear-gradient(135deg, #D4AF37, #E5C158)', color: '#0A0A0A', boxShadow: '0 4px 16px rgba(212,175,55,0.2)' }}
                     >
                       Pay Salary
                     </button>
@@ -420,4 +420,3 @@ export default function Staff() {
     </div>
   );
 }
-

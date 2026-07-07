@@ -205,28 +205,28 @@ export default function Dashboard() {
     <motion.div
       variants={itemVariants}
       className="glass-card p-5 flex flex-col justify-between relative overflow-hidden group"
-      style={{ border: '1px solid rgba(205, 127, 50,0.1)' }}
+      style={{ border: '1px solid rgba(200, 157, 60,0.1)' }}
     >
       {/* Decorative gold glow */}
       <div
         className="absolute -right-10 -top-10 w-40 h-40 rounded-full pointer-events-none transition-all duration-500"
-        style={{ background: 'radial-gradient(circle, rgba(205, 127, 50,0.03) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(200, 157, 60,0.03) 0%, transparent 70%)' }}
       />
       
       <div className="flex justify-between items-start mb-4 relative z-10">
         <div
           className="p-3 rounded-2xl shadow-sm backdrop-blur-md"
-          style={{ background: 'rgba(205, 127, 50,0.08)', border: '1px solid rgba(205, 127, 50,0.15)' }}
+          style={{ background: 'rgba(200, 157, 60,0.08)', border: '1px solid rgba(200, 157, 60,0.15)' }}
         >
           <Icon className="w-5 h-5" style={{ color: 'var(--gold)' }} />
         </div>
       </div>
       <div className="relative z-10">
-        <h3 className="text-[11px] font-bold mb-2 tracking-[0.2em] uppercase" style={{ color: 'rgba(205, 127, 50,0.6)' }}>{title}</h3>
+        <h3 className="text-[11px] font-bold mb-2 tracking-[0.2em] uppercase" style={{ color: 'rgba(200, 157, 60,0.6)' }}>{title}</h3>
         <p className="font-numbers text-5xl font-light text-white tracking-tight mb-3">{todayValue}</p>
         
-        <div className="flex items-center justify-between pt-3" style={{ borderTop: '1px solid rgba(205, 127, 50,0.08)' }}>
-          <span className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(205, 127, 50,0.35)' }}>{lifetimeLabel || 'Lifetime'}</span>
+        <div className="flex items-center justify-between pt-3" style={{ borderTop: '1px solid rgba(200, 157, 60,0.08)' }}>
+          <span className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(200, 157, 60,0.35)' }}>{lifetimeLabel || 'Lifetime'}</span>
           <span className="text-sm font-light text-white/70">{lifetimeValue}</span>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default function Dashboard() {
         <h1 className="font-numbers text-5xl mb-4 leading-none">
           Dashboard
         </h1>
-        <p className="text-sm font-medium tracking-widest uppercase" style={{ color: 'rgba(205, 127, 50,0.4)' }}>
+        <p className="text-sm font-medium tracking-widest uppercase" style={{ color: 'rgba(200, 157, 60,0.4)' }}>
           Executive Overview &bull; {today.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}
         </p>
       </div>
@@ -263,30 +263,30 @@ export default function Dashboard() {
                   key={customer.id}
                   variants={itemVariants}
                   className="glass-card p-5 relative overflow-hidden group"
-                  style={{ border: '1px solid rgba(205, 127, 50,0.2)', background: 'rgba(205, 127, 50,0.04)' }}
+                  style={{ border: '1px solid rgba(200, 157, 60,0.2)', background: 'rgba(200, 157, 60,0.04)' }}
                 >
-                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl" style={{ background: 'rgba(205, 127, 50,0.06)' }}></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl" style={{ background: 'rgba(200, 157, 60,0.06)' }}></div>
                   <div className="relative z-10 flex items-start gap-4">
                     <div
                       className="p-3 rounded-2xl shadow-sm backdrop-blur-md"
-                      style={{ background: 'rgba(205, 127, 50,0.1)', border: '1px solid rgba(205, 127, 50,0.2)' }}
+                      style={{ background: 'rgba(200, 157, 60,0.1)', border: '1px solid rgba(200, 157, 60,0.2)' }}
                     >
                       <Gift className="w-6 h-6" style={{ color: 'var(--gold)' }} />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-numbers text-2xl font-light text-white">{customer.name}</h3>
-                      <p className="text-[11px] tracking-[0.2em] uppercase mt-1 font-bold" style={{ color: 'rgba(205, 127, 50,0.6)' }}>Birthday Today</p>
+                      <p className="text-[11px] tracking-[0.2em] uppercase mt-1 font-bold" style={{ color: 'rgba(200, 157, 60,0.6)' }}>Birthday Today</p>
                       
                       <button 
                         onClick={() => window.open(`https://wa.me/${customer.phone?.replace(/\D/g,'')}?text=${encodeURIComponent(`A Very Happy Birthday from Team VJ Hair Salon!!!\n\nTo make your special day even more memorable, we're delighted to offer you 50% OFF on any ONE service, valid exclusively until today.\n\nWe look forward to celebrating with you!\n\nWith love,\nTeam VJ Hair Salon`)}`, '_blank')}
                         className="mt-4 w-full py-2 rounded-xl font-bold text-xs transition-all shadow-sm flex justify-center items-center gap-2"
                         style={{
-                          background: 'rgba(205, 127, 50,0.15)',
+                          background: 'rgba(200, 157, 60,0.15)',
                           color: 'var(--gold)',
-                          border: '1px solid rgba(205, 127, 50,0.25)',
+                          border: '1px solid rgba(200, 157, 60,0.25)',
                         }}
-                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(205, 127, 50,0.25)'; }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(205, 127, 50,0.15)'; }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(200, 157, 60,0.25)'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(200, 157, 60,0.15)'; }}
                       >
                         Send Wish
                       </button>
@@ -377,7 +377,7 @@ export default function Dashboard() {
           >
             <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none" style={{ background: 'rgba(207,102,121,0.02)' }}></div>
             
-            <div className="flex justify-between items-center mb-5 shrink-0 pb-4 relative z-10" style={{ borderBottom: '1px solid rgba(205, 127, 50,0.06)' }}>
+            <div className="flex justify-between items-center mb-5 shrink-0 pb-4 relative z-10" style={{ borderBottom: '1px solid rgba(200, 157, 60,0.06)' }}>
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-xl" style={{ background: 'rgba(207,102,121,0.08)', border: '1px solid rgba(207,102,121,0.15)' }}>
                   <AlertTriangle className="w-4 h-4" style={{ color: '#CF6679' }} />
@@ -446,7 +446,7 @@ export default function Dashboard() {
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
           <div
             className="relative w-full max-w-md h-full glass-panel flex flex-col overflow-hidden shadow-2xl"
-            style={{ borderLeft: '1px solid rgba(205, 127, 50,0.15)' }}
+            style={{ borderLeft: '1px solid rgba(212,175,55,0.15)' }}
             onClick={e => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-6 border-b border-white/10 bg-black/40">
@@ -464,7 +464,7 @@ export default function Dashboard() {
 
               <div className="space-y-4">
                 <div>
-                  <label className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Current Stock</label>
+                  <label className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(212,175,55,0.5)' }}>Current Stock</label>
                   <input
                     type="number"
                     required
@@ -474,7 +474,7 @@ export default function Dashboard() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(205, 127, 50,0.5)' }}>Low Stock Threshold</label>
+                  <label className="text-xs font-bold tracking-widest uppercase mb-2 block" style={{ color: 'rgba(212,175,55,0.5)' }}>Low Stock Threshold</label>
                   <input
                     type="number"
                     required
@@ -490,7 +490,7 @@ export default function Dashboard() {
               <button
                 onClick={handleUpdateStock}
                 className="w-full py-3 rounded-xl font-bold text-sm transition-all text-black"
-                style={{ background: 'linear-gradient(135deg, #CD7F32, #E5C158)', boxShadow: '0 4px 16px rgba(205, 127, 50,0.2)' }}
+                style={{ background: 'linear-gradient(135deg, #D4AF37, #E5C158)', boxShadow: '0 4px 16px rgba(212,175,55,0.2)' }}
               >
                 Save Changes
               </button>
@@ -501,4 +501,3 @@ export default function Dashboard() {
     </motion.div>
   );
 }
-

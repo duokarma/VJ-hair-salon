@@ -534,7 +534,7 @@ export default function Appointments() {
     const svcs = (appt.appointment_services || []).map(s => s.service_name).join(', ');
     const dateStr = format(parseISO(appt.appointment_date), 'dd MMM yyyy, hh:mm a');
     const staffName = appt.staff?.name || '';
-    const msg = `Hello ${appt.customer_name}!\n\nThis is a reminder for your appointment at TEN11 Salon:\n- Date: ${dateStr}\n- Services: ${svcs || 'As discussed'}\n- Staff: ${staffName || 'Any available'}\n\nWe look forward to seeing you!!!`;
+    const msg = `Hello ${appt.customer_name}!\n\nThis is a reminder for your appointment at VJ Hair Salon:\n- Date: ${dateStr}\n- Services: ${svcs || 'As discussed'}\n- Staff: ${staffName || 'Any available'}\n\nWe look forward to seeing you!!!`;
     return `https://wa.me/${appt.customer_phone.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -604,8 +604,8 @@ export default function Appointments() {
             return (
               <div key={dateKey}>
                 <div className="flex items-center gap-3 mb-4">
-                  <CalendarDays className="w-4 h-4" style={{ color: 'rgba(205,127,50,0.6)' }} />
-                  <h3 className="text-sm font-bold tracking-widest uppercase" style={{ color: isDateToday ? '#CD7F32' : 'rgba(255,255,255,0.4)' }}>
+                  <CalendarDays className="w-4 h-4" style={{ color: 'rgba(212,175,55,0.6)' }} />
+                  <h3 className="text-sm font-bold tracking-widest uppercase" style={{ color: isDateToday ? '#D4AF37' : 'rgba(255,255,255,0.4)' }}>
                     {isDateToday ? "Today — " : ""}{format(dateObj, 'EEEE, dd MMMM yyyy')}
                   </h3>
                 </div>
@@ -1083,4 +1083,3 @@ export default function Appointments() {
     </div>
   );
 }
-

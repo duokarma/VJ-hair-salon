@@ -117,5 +117,5 @@ export const generateInvoicePDF = (data: InvoiceData) => {
   doc.text('Thank you for choosing VJ Hair Salon!', 105, 280, { align: 'center' });
 
   // Save PDF
-  doc.save(`VJ_Invoice_${data.invoiceNumber}.pdf`);
+  doc.save(`VJ_Hair_Salon_Invoice_${data.invoiceNumber}.pdf`);
 };

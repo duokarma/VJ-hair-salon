@@ -9,7 +9,7 @@ const FeatureItem = ({ icon: Icon, title, desc }: { icon: any, title: string, de
   <div className="flex items-center gap-5 group">
     <div
       className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-      style={{ background: 'rgba(205, 127, 50,0.06)', border: '1px solid rgba(205, 127, 50,0.15)' }}
+      style={{ background: 'rgba(200, 157, 60,0.06)', border: '1px solid rgba(200, 157, 60,0.15)' }}
     >
       <Icon className="w-4 h-4" style={{ color: 'var(--gold)' }} strokeWidth={1.5} />
     </div>
@@ -80,11 +80,11 @@ export default function Login() {
       {/* Ambient gold glows */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(205, 127, 50,0.05) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, rgba(200, 157, 60,0.05) 0%, transparent 70%)' }}
       />
       <div
         className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(205, 127, 50,0.03) 0%, transparent 60%)' }}
+        style={{ background: 'radial-gradient(ellipse at center, rgba(200, 157, 60,0.03) 0%, transparent 60%)' }}
       />
 
       {/* Main Content */}
@@ -100,10 +100,10 @@ export default function Login() {
           <div>
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10"
-              style={{ background: 'rgba(205, 127, 50,0.06)', border: '1px solid rgba(205, 127, 50,0.15)' }}
+              style={{ background: 'rgba(200, 157, 60,0.06)', border: '1px solid rgba(200, 157, 60,0.15)' }}
             >
               <Sparkles className="w-3 h-3" style={{ color: 'var(--gold)' }} />
-              <span className="text-[10px] font-medium tracking-widest uppercase" style={{ color: 'rgba(205, 127, 50,0.8)' }}>
+              <span className="text-[10px] font-medium tracking-widest uppercase" style={{ color: 'rgba(200, 157, 60,0.8)' }}>
                 Welcome Back
               </span>
             </div>
@@ -114,7 +114,7 @@ export default function Login() {
               className="text-7xl xl:text-8xl mb-5 leading-none"
               style={{ fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif", color: 'var(--gold)', fontWeight: 400, letterSpacing: '0.04em' }}
             >
-              TEN11
+              VJ Hair Salon
             </h1>
             <p className="text-[11px] font-light tracking-[0.2em] uppercase" style={{ color: 'rgba(184,184,184,0.4)' }}>
               Luxury Salon Operating System
@@ -129,10 +129,10 @@ export default function Login() {
 
           <div
             className="rounded-[2rem] p-7 relative"
-            style={{ background: 'rgba(205, 127, 50,0.04)', border: '1px solid rgba(205, 127, 50,0.1)' }}
+            style={{ background: 'rgba(200, 157, 60,0.04)', border: '1px solid rgba(200, 157, 60,0.1)' }}
           >
-            <Quote className="absolute top-5 left-5 w-4 h-4" style={{ color: 'rgba(205, 127, 50,0.2)' }} />
-            <Quote className="absolute bottom-5 right-5 w-4 h-4 rotate-180" style={{ color: 'rgba(205, 127, 50,0.2)' }} />
+            <Quote className="absolute top-5 left-5 w-4 h-4" style={{ color: 'rgba(200, 157, 60,0.2)' }} />
+            <Quote className="absolute bottom-5 right-5 w-4 h-4 rotate-180" style={{ color: 'rgba(200, 157, 60,0.2)' }} />
             <p className="text-[13px] leading-relaxed mb-4 px-6 pt-2" style={{ color: 'rgba(234,234,234,0.7)' }}>
               Excellence is not an act,<br />but a habit.
             </p>
@@ -151,34 +151,32 @@ export default function Login() {
             className="w-full rounded-[2.5rem] p-8 sm:p-10 relative overflow-hidden"
             style={{
               background: 'rgba(17,17,17,0.85)',
-              border: '1px solid rgba(205, 127, 50,0.15)',
+              border: '1px solid rgba(200, 157, 60,0.15)',
               backdropFilter: 'blur(40px)',
               WebkitBackdropFilter: 'blur(40px)',
-              boxShadow: '0 32px 100px rgba(0,0,0,0.9), 0 0 40px rgba(205, 127, 50,0.04)',
+              boxShadow: '0 32px 100px rgba(0,0,0,0.9), 0 0 40px rgba(200, 157, 60,0.04)',
             }}
           >
             {/* Card glow */}
             <div
               className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, rgba(205, 127, 50,0.05) 0%, transparent 70%)' }}
+              style={{ background: 'radial-gradient(circle, rgba(200, 157, 60,0.05) 0%, transparent 70%)' }}
             />
 
             <div className="text-center mb-10 relative z-10">
-              <div className="flex flex-col items-center">
-                <div 
-                  className="w-16 h-16 rounded-full flex items-center justify-center overflow-hidden shadow-sm mb-4 bg-black/40"
-                  style={{ border: '1px solid rgba(205, 127, 50,0.35)', boxShadow: '0 0 20px rgba(205, 127, 50,0.1)' }}
-                >
-                  <span className="text-2xl font-bold text-primary tracking-wider">VJ</span>
-                </div>
-                <h1 className="text-3xl font-bold tracking-[0.15em] text-primary uppercase text-center" style={{ color: 'var(--gold)' }}>
-                  VJ
-                </h1>
-                <p className="text-xs tracking-[0.2em] text-white/50 uppercase mt-1 text-center">
-                  Hair Salon
-                </p>
+              <div
+                className="mx-auto w-24 h-24 mb-6 rounded-full overflow-hidden shadow-2xl"
+                style={{ border: '1px solid rgba(200, 157, 60,0.3)', boxShadow: '0 0 30px rgba(200, 157, 60,0.08)' }}
+              >
+                <img src="/logo.png" alt="VJ Hair Salon Logo" className="w-full h-full object-cover" />
               </div>
-              <p className="text-[9px] uppercase tracking-[0.35em] font-bold mt-4" style={{ color: 'rgba(205, 127, 50,0.5)' }}>
+              <h1
+                className="text-4xl mb-2 leading-none"
+                style={{ fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif", color: 'var(--gold)', fontWeight: 400, letterSpacing: '0.06em' }}
+              >
+                VJ Hair Salon
+              </h1>
+              <p className="text-[9px] uppercase tracking-[0.35em] font-bold" style={{ color: 'rgba(200, 157, 60,0.5)' }}>
                 Exclusive Access
               </p>
 
@@ -186,19 +184,19 @@ export default function Login() {
               <div className="mt-5 flex justify-center">
                 <div
                   className="h-px w-20"
-                  style={{ background: 'linear-gradient(to right, transparent, rgba(205, 127, 50,0.4), transparent)' }}
+                  style={{ background: 'linear-gradient(to right, transparent, rgba(200, 157, 60,0.4), transparent)' }}
                 />
               </div>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-5 relative z-10">
               <div className="space-y-2">
-                <label className="text-[9px] font-bold uppercase tracking-[0.15em] pl-1" style={{ color: 'rgba(205, 127, 50,0.5)' }}>
+                <label className="text-[9px] font-bold uppercase tracking-[0.15em] pl-1" style={{ color: 'rgba(200, 157, 60,0.5)' }}>
                   Email Address
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Mail className="h-4 w-4 transition-colors duration-300" style={{ color: 'rgba(205, 127, 50,0.4)' }} />
+                    <Mail className="h-4 w-4 transition-colors duration-300" style={{ color: 'rgba(200, 157, 60,0.4)' }} />
                   </div>
                   <input
                     type="email"
@@ -212,12 +210,12 @@ export default function Login() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[9px] font-bold uppercase tracking-[0.15em] pl-1" style={{ color: 'rgba(205, 127, 50,0.5)' }}>
+                <label className="text-[9px] font-bold uppercase tracking-[0.15em] pl-1" style={{ color: 'rgba(200, 157, 60,0.5)' }}>
                   Password
                 </label>
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Lock className="h-4 w-4 transition-colors duration-300" style={{ color: 'rgba(205, 127, 50,0.4)' }} />
+                    <Lock className="h-4 w-4 transition-colors duration-300" style={{ color: 'rgba(200, 157, 60,0.4)' }} />
                   </div>
                   <input
                     type={showPassword ? 'text' : 'password'}
@@ -279,14 +277,14 @@ export default function Login() {
       >
         <div
           className="inline-flex items-center gap-6 px-8 py-3.5 rounded-full text-[11px] tracking-wide"
-          style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(205, 127, 50,0.1)', color: 'rgba(184,184,184,0.4)' }}
+          style={{ background: 'rgba(17,17,17,0.6)', border: '1px solid rgba(200, 157, 60,0.1)', color: 'rgba(184,184,184,0.4)' }}
         >
           <span className="flex items-center gap-2">
             <Lock className="w-3 h-3" style={{ color: 'rgba(184,184,184,0.3)' }} />
-            © {new Date().getFullYear()} VJ Hair Salon. All rights reserved.
+            © 2026 VJ Hair Salon. All rights reserved.
           </span>
-          <span className="w-px h-3" style={{ background: 'rgba(205, 127, 50,0.2)' }} />
-          <span className="font-medium cursor-default" style={{ color: 'rgba(205, 127, 50,0.7)' }}>
+          <span className="w-px h-3" style={{ background: 'rgba(200, 157, 60,0.2)' }} />
+          <span className="font-medium cursor-default" style={{ color: 'rgba(200, 157, 60,0.7)' }}>
             Powered by Duokarma
           </span>
         </div>

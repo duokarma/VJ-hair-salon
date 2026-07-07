@@ -7,6 +7,8 @@
 DROP TABLE IF EXISTS public.staff_commissions CASCADE;
 DROP TABLE IF EXISTS public.visit_products CASCADE;
 DROP TABLE IF EXISTS public.visit_services CASCADE;
+DROP TABLE IF EXISTS public.appointment_services CASCADE;
+DROP TABLE IF EXISTS public.appointments CASCADE;
 DROP TABLE IF EXISTS public.customer_visits CASCADE;
 DROP TABLE IF EXISTS public.expenses CASCADE;
 DROP TABLE IF EXISTS public.products CASCADE;
@@ -248,6 +250,36 @@ CREATE POLICY "Allow insert for all staff" ON public.customer_visits FOR INSERT 
 CREATE POLICY "Allow update for all staff" ON public.customer_visits FOR UPDATE USING (public.is_receptionist());
 CREATE POLICY "Allow delete for Owner" ON public.customer_visits FOR DELETE USING (public.is_owner());
 
+-- Appointments
+CREATE TABLE public.appointments (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    customer_name TEXT NOT NULL,
+    customer_phone TEXT,
+    appointment_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    notes TEXT,
+    status TEXT DEFAULT 'scheduled',
+    payment_due NUMERIC DEFAULT 0,
+    staff_id BIGINT REFERENCES public.staff(id) ON DELETE SET NULL,
+    is_deleted BOOLEAN DEFAULT false,
+    converted_visit_id UUID REFERENCES public.customer_visits(id) ON DELETE SET NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+CREATE TRIGGER update_appointments_updated_at BEFORE UPDATE ON public.appointments FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+ALTER TABLE public.appointments ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow all for staff" ON public.appointments FOR ALL USING (public.is_receptionist());
+
+-- Appointment Services
+CREATE TABLE public.appointment_services (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    appointment_id UUID REFERENCES public.appointments(id) ON DELETE CASCADE,
+    service_id BIGINT REFERENCES public.services(id) ON DELETE SET NULL,
+    service_name TEXT NOT NULL,
+    price NUMERIC NOT NULL DEFAULT 0
+);
+ALTER TABLE public.appointment_services ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow all for staff" ON public.appointment_services FOR ALL USING (public.is_receptionist());
+
 -- Visit Services Mapping
 CREATE TABLE public.visit_services (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -331,9 +363,8 @@ INSERT INTO public.services (service_name, category, price) VALUES
 ('Pedicure', 'Beauty Services', 600);
 
 INSERT INTO public.staff (name, gender, salary, commission_rate) VALUES 
-('Rahul (Senior Stylist)', 'Male', 25000, 15),
-('Priya (Beautician)', 'Female', 20000, 10),
-('Amit (Hair Expert)', 'Male', 22000, 10);
+('Jitendra', 'Male', 25000, 15),
+('Staff 2', 'Female', 20000, 10);
 
 --------------------------------------------------------
 -- 8. ENABLE REALTIME

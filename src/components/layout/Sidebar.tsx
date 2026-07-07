@@ -55,7 +55,7 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
           className="w-10 h-10 rounded-full flex items-center justify-center mr-3 shrink-0 overflow-hidden shadow-sm"
           style={{ border: '1px solid rgba(200, 157, 60,0.35)', boxShadow: '0 0 15px rgba(200, 157, 60,0.08)' }}
         >
-          <img src="/logo.png" alt="VJ Hair Salon Logo" className="w-full h-full object-cover" />
+          <img src="/logo.jpeg" alt="VJ Hair Salon Logo" className="w-full h-full object-cover" />
         </div>
         <div>
           <h1

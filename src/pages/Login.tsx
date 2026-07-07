@@ -168,7 +168,7 @@ export default function Login() {
                 className="mx-auto w-24 h-24 mb-6 rounded-full overflow-hidden shadow-2xl"
                 style={{ border: '1px solid rgba(200, 157, 60,0.3)', boxShadow: '0 0 30px rgba(200, 157, 60,0.08)' }}
               >
-                <img src="/logo.png" alt="VJ Hair Salon Logo" className="w-full h-full object-cover" />
+                <img src="/logo.jpeg" alt="VJ Hair Salon Logo" className="w-full h-full object-cover" />
               </div>
               <h1
                 className="text-4xl mb-2 leading-none"

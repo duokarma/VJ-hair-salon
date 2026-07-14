@@ -129,7 +129,7 @@ export default function Customers() {
   useEffect(() => {
     setPage(1);
   }, [debouncedSearch]);
-  
+
   // Modals state
   const [isCustomerModalOpen, setIsCustomerModalOpen] = useState(false);
   const [customerToEdit, setCustomerToEdit] = useState<Customer | null>(null);
@@ -754,11 +754,20 @@ export default function Customers() {
   }, [customers, filterTime, sortBy]);
 
   const groupedCustomers = useMemo(() => {
+    // Deduplicate by customer ID (since customer_timeline view might return multiple events per customer)
+    const uniqueCustomersMap = new Map();
+    for (const c of processedCustomers) {
+      if (!uniqueCustomersMap.has(c.id)) {
+        uniqueCustomersMap.set(c.id, c);
+      }
+    }
+    const uniqueProcessedCustomers = Array.from(uniqueCustomersMap.values());
+
     if (sortBy === 'spend') {
-      return { 'Sorted by Spend': processedCustomers };
+      return { 'Sorted by Spend': uniqueProcessedCustomers };
     }
     if (sortBy === 'alphabet') {
-      return processedCustomers.reduce((acc, c) => {
+      return uniqueProcessedCustomers.reduce((acc, c) => {
         const letter = c.name.charAt(0).toUpperCase();
         if (!acc[letter]) acc[letter] = [];
         acc[letter].push(c);
@@ -766,7 +775,7 @@ export default function Customers() {
       }, {} as Record<string, Customer[]>);
     }
     
-    return processedCustomers.reduce((acc, c) => {
+    return uniqueProcessedCustomers.reduce((acc, c) => {
       if (!c.createdAt) {
         if (!acc['Unknown Date']) acc['Unknown Date'] = [];
         acc['Unknown Date'].push(c);

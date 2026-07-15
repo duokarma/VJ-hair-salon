@@ -12,6 +12,7 @@ import { z } from 'zod';
 const serviceSchema = z.object({
   service_name: z.string().min(2, "Name is required"),
   category: z.string().min(1, "Category is required"),
+  gender: z.string().optional(),
   price: z.coerce.number().min(0, "Price must be positive")
 });
 
@@ -52,7 +53,7 @@ export default function Services() {
 
   const openAddModal = () => {
     setServiceToEdit(null);
-    reset({ service_name: '', category: 'Hair Services', price: '' as any });
+    reset({ service_name: '', category: 'Hair Services', gender: 'Unisex', price: '' as any });
     setIsModalOpen(true);
   };
 
@@ -61,6 +62,7 @@ export default function Services() {
     reset({
       service_name: service.service_name,
       category: service.category || 'Other',
+      gender: service.gender || 'Unisex',
       price: service.price
     });
     setIsModalOpen(true);
@@ -243,6 +245,14 @@ export default function Services() {
                     <option value="Other" className="bg-black">Other</option>
                   </select>
                   {errors.category && <p className="text-danger text-xs mt-1.5">{errors.category.message as string}</p>}
+                </div>
+                <div>
+                  <label className="block text-xs font-bold tracking-widest text-white/50 uppercase mb-2">Gender Option</label>
+                  <select {...register("gender")} className="glass-input w-full px-4 py-3 appearance-none">
+                    <option value="Unisex" className="bg-black">Unisex</option>
+                    <option value="Male" className="bg-black">Male</option>
+                    <option value="Female" className="bg-black">Female</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-xs font-bold tracking-widest text-white/50 uppercase mb-2">Price (Rs. ) *</label>
